@@ -21,7 +21,8 @@ async function registerUser(req, res) {
     let userDetails = { ...req.body, password: hashPassword };
 
     if (req.file) {
-      let profileUrl = `http://localhost:8080/${req.file.destination}/${req.file.filename}`;
+      // let profileUrl = `http://localhost:8080/${req.file.destination}/${req.file.filename}`;
+      let profileUrl = `${process.env.PROTOCOL}://${req.host}/${req.file.destination}/${req.file.filename}`;
       userDetails.profilePic = profileUrl;
     }
 

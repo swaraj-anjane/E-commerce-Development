@@ -3117,3 +3117,8 @@
  {"cartItems":[{"_id":"69fae1614ac4e7c280bf79a6","name":"iphone 15 pro","poster":"https://images.unsplash.com/photo-1695048133142-1a20484d2569","price":129999,"mrp":139999,"discount":7,"quantity":1,"id":"6a01c85e08be296f5ed6e259"}],"shippingAddress":{"fullName":"swaraj anjane","contact":"6263296465","pincode":"453112","city":"indore","state":"mp","addressLine":"52, indore","landmark":"mandir","house":"52"}}
  Wed May 13 2026 13:23:04 GMT+0530 (India Standard Time) GET /upload/user/1778658759152-dark-moon-the-blood-3840x2160-25368.jpg 200
  Wed May 13 2026 13:23:44 GMT+0530 (India Standard Time) GET /upload/user/1778658759152-dark-moon-the-blood-3840x2160-25368.jpg 200
+ Wed May 13 2026 13:31:52 GMT+0530 (India Standard Time) GET /upload/user/1778659170524-dark-moon-the-blood-3840x2160-25368.jpg 200
+ Wed May 13 2026 13:37:30 GMT+0530 (India Standard Time) GET /upload/user/1778659170524-dark-moon-the-blood-3840x2160-25368.jpg 200
+ Wed May 13 2026 13:37:44 GMT+0530 (India Standard Time) GET /health-check 200
+ Wed May 13 2026 13:37:44 GMT+0530 (India Standard Time) GET /favicon.ico 200
+ Wed May 13 2026 13:37:50 GMT+0530 (India Standard Time) GET /.well-known/appspecific/com.chrome.devtools.json 200

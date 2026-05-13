@@ -32,6 +32,8 @@ server.use("/template", express.static("template"));
 
 //routers
 server.get("/health-check", (req, res) => {
+  console.log(req.originalUrl,req.host);
+  
   let details = { uptime: os.uptime(), message: "server is healthy" };
   res.status(200).json(details);
 });
