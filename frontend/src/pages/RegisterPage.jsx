@@ -33,7 +33,7 @@ export default function RegisterPage() {
     try{
         let response = await registerUserApi(formData)
         alert(response.message || "User registered successfully");
-        window.location.replace(response.redirectUrl || "/login");
+        // window.location.replace(response.redirectUrl || "/login");
     }catch(error){
         console.log(error.message)
         alert("Error uploading data. Please try again.");
