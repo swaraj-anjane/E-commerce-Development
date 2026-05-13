@@ -10,7 +10,7 @@ const CartRouter = require("./routes/cart.routes");
 const OrderRouter = require("./routes/order.routes");
 const mylogger = require("./utils/loggerHelperFunction");
 const cookieParser = require("cookie-parser");
-const paymentrouter = require("./routes/payment.routes")
+const paymentrouter = require("./routes/payment.routes");
 
 //middleware
 server.use(express.json());
@@ -18,7 +18,10 @@ server.use(express.urlencoded({ extended: true }));
 server.use(cookieParser());
 server.use(
   cors({
-    origin: ["http://localhost:5173", "https://mindcoders.in"],
+    origin: [
+      "http://localhost:5173",
+      " https://e-commerce-development.vercel.app",
+    ],
     credentials: true,
   }),
 );
@@ -36,7 +39,6 @@ server.get("/health-check", (req, res) => {
 //product router
 server.use("/product", ProductRouter);
 
-
 //user router
 server.use("/user", UserRouter);
 //cart router
@@ -44,7 +46,6 @@ server.use("/cart", CartRouter);
 //order router
 server.use("/order", OrderRouter);
 server.use("/payment", paymentrouter);
-
 
 server.listen(process.env.PORT, async () => {
   try {
