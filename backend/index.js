@@ -20,7 +20,7 @@ server.use(
   cors({
     origin: [
       "http://localhost:5173",
-      " https://e-commerce-development.vercel.app",
+      "https://e-commerce-development.vercel.app",
     ],
     credentials: true,
   }),
