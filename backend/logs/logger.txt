@@ -3980,3 +3980,6 @@
  Thu May 14 2026 14:14:28 GMT+0530 (India Standard Time) DELETE /cart/6a058771f3a285d2ce09c225 200
  Thu May 14 2026 14:14:28 GMT+0530 (India Standard Time) DELETE /cart/6a058773f3a285d2ce09c226 200
  Thu May 14 2026 14:15:57 GMT+0530 (India Standard Time) GET /product 200
+ Thu May 14 2026 14:20:12 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Thu May 14 2026 14:20:12 GMT+0530 (India Standard Time) GET /product 200
+ Thu May 14 2026 14:20:12 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
