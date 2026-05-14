@@ -5,20 +5,22 @@ const apiEndPoints = {
   VERIFY_LOGIN: "/user/verify-login",
 
   //products api
-  GET_ALL_PRODUCTS: (query) => {
-    if(query){
-      return `/product?` + query  
-    }else{
-      return "/product"
+  GET_ALL_PRODUCTS: query => {
+    if (query) {
+      return `/product?` + query;
+    } else {
+      return "/product";
     }
   },
-  ADD_TO_CART:"/cart/add",
-  GET_USER_CART:"/cart/getAll/userItems",
-  REMOVE_USER_CART_ITEM: (id)=>`/cart/${id}`,
+  ADD_TO_CART: "/cart/add",
+  GET_USER_CART: "/cart/getAll/userItems",
+  UPDATE_ITEM_QUANTITY: id => `/cart/update-quantity/${id}`,
+  REMOVE_USER_CART_ITEM: id => `/cart/${id}`,
 
   //ORDERSS
 
-  MY_ORDERS: "/order/myorders"
+  MY_ORDERS: "/order/myorders",
 };
 
 export default apiEndPoints;
+

@@ -38,11 +38,11 @@ const ProductCard = ({ product }) => {
         <img
           src={product.poster}
           alt={product.name}
-          className="w-full h-64 object-cover"
+          className="w-full h-64 object-cover cursor-pointer hover:scale-105 transition duration-300"
         />
-        <span className="absolute top-4 left-4 bg-black text-white text-xs px-3 py-1 rounded-full">
+        {/* <span className="absolute top-4 left-4 bg-black text-white text-xs px-3 py-1 rounded-full">
           {product.discount}
-        </span>
+        </span> */}
       </div>
       <div className="p-5">
         <p className="text-xs text-gray-500">
@@ -62,7 +62,7 @@ const ProductCard = ({ product }) => {
           <span className="text-green-600 text-sm font-medium flex items-center gap-1">
             <FaTag /> Extra Offer Available
           </span>
-          
+
           <button
             onClick={() => {
               handleAddToCart();

@@ -55,7 +55,22 @@ async function removeCartItem(req, res) {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-}
+};
+
+async function updateCartQuantity(req, res) {
+  const { quantity } = req.body;
+  try {
+    const updatedCart = await cartModel.findByIdAndUpdate(
+      req.params.id,
+      { quantity },
+      { new: true },
+    );
+  } catch (error) {
+    res.json(500).json({ message: error.message });
+  }
+
+  res.status(200).json({ message: "item quantity updated" });
+};
 
 
-module.exports = { addToCart, getUserCart, removeCartItem};
+module.exports = { addToCart, getUserCart, removeCartItem, updateCartQuantity };

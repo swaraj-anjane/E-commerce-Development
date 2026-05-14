@@ -8,43 +8,10 @@ import {
   FaLock,
 } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserCartItemAsync, removeCartItemAsync } from "../redux/cartSlice";
+import { getUserCartItemAsync, removeCartItemAsync, updateCartQuantityAsync, } from "../redux/cartSlice";
 import { Navigate, useNavigate } from "react-router";
 import toast from "react-hot-toast";
 import { removeUserCartItemApi } from "../service/apiCollections";
-
-// const initialCartItems = [
-//   {
-//     id: 1,
-//     name: "Premium Sneakers",
-//     brand: "Nike",
-//     category: "Footwear",
-//     price: 2499,
-//     mrp: 4999,
-//     discount: "50% OFF",
-//     qty: 1,
-//     img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop",
-//   },
-//   {
-//     id: 2,
-//     name: "Smart Watch",
-//     brand: "Noise",
-//     category: "Electronics",
-//     price: 3199,
-//     mrp: 5499,
-//     discount: "42% OFF",
-//     qty: 2,
-//     img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop",
-//   },
-//   {
-//     product: "69f5f889ecfaf53266d88df3",
-//     user: "69f1f275df1c51411ebebfd7",
-//     quantity: 1,
-//     _id: "69f8932d1058b4560350951e",
-//     __v: 0,
-//   },
-// ];
-
 
 
 export default function CartPage() {
@@ -126,9 +93,9 @@ export default function CartPage() {
                       <h2 className="text-xl font-semibold mt-1">
                         {item.name}
                       </h2>
-                      <span className="inline-block mt-2 bg-black text-white text-xs px-3 py-1 rounded-full">
+                      {/* <span className="inline-block mt-2 bg-black text-white text-xs px-3 py-1 rounded-full">
                         {item.discount}
-                      </span>
+                      </span> */}
                     </div>
                     <button
                       onClick={() => {
@@ -151,13 +118,29 @@ export default function CartPage() {
                   <div className="mt-5 flex items-center justify-between flex-wrap gap-4">
                     <div className="flex items-center border rounded-full overflow-hidden">
                       <button
-                        // onClick={() => decreaseQty(item.id)}
+                        onClick={() => {
+                          if (item.quantity > 1) {
+                            dispatch(
+                              updateCartQuantityAsync({
+                                id: item.id,
+                                quantity: item.quantity - 1,
+                              }),
+                            );
+                          }
+                        }}
                         className="px-4 py-2 hover:bg-gray-100">
                         <FaMinus />
                       </button>
                       <span className="px-5 font-medium">{item.quantity}</span>
                       <button
-                        // onClick={() => increaseQty(item.id)}
+                        onClick={() =>
+                          dispatch(
+                            updateCartQuantityAsync({
+                              id: item.id,
+                              quantity: item.quantity + 1,
+                            }),
+                          )
+                        }
                         className="px-4 py-2 hover:bg-gray-100">
                         <FaPlus />
                       </button>

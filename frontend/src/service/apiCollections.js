@@ -56,9 +56,7 @@ async function getAllproductApi(query) {
 }
 async function getproductByIdApi(id) {
   try {
-    const response = await axiosInstance.get(
-      `${apiEndPoints.GET_ALL_PRODUCTS}/${id}`,
-    );
+   const response = await axiosInstance.get(`/product/${id}`);
     return response.data;
   } catch (error) {
     return error.response.data || { message: "failed to load products" };
@@ -115,6 +113,25 @@ async function getMyOrderApi() {
 }
 
 
+// cart item quantity update
+
+async function updateCartItemQuantity(id, quantity) {
+  try {
+
+    const response = await axiosInstance.patch(
+      apiEndPoints.UPDATE_ITEM_QUANTITY(id),
+      { quantity }
+    );
+
+    return response.data;
+
+  } catch (error) {
+
+    return error.response.data;
+  }
+}
+
+
 export {
   loginUserApi,
   registerUserApi,
@@ -125,5 +142,6 @@ export {
   addItemToCartApi,
   getUserCartItemApi,
   removeUserCartItemApi,
-  getMyOrderApi
+  getMyOrderApi,
+  updateCartItemQuantity,
 };

@@ -15,6 +15,8 @@ import { Confirm } from "notiflix";
 import toast from "react-hot-toast";
 import PaymenttButton from "../components/cards/ui/paymentButton ";
 
+
+
 const paymentMode = [
   {
     id: "cod",
@@ -31,6 +33,7 @@ const paymentMode = [
 
 // import { axiosInstance} from "../service/axiosInstance";
 import axiosInstance from "../service/axiosInstance"; // const orderItems = [
+import { Navigate, useNavigate } from "react-router";
 //   { id: 1, name: 'Premium Sneakers', qty: 1, price: 2499, img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=400&auto=format&fit=crop' },
 //   { id: 2, name: 'Smart Watch', qty: 2, price: 3199, img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=400&auto=format&fit=crop' },
 // ];
@@ -49,7 +52,7 @@ export default function CheckoutPage() {
       landmark: "",
     },
   );
-
+const navigate = useNavigate();
   const orderItems = useSelector(store => store.cart.cartItems);
   const subtotal = orderItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -84,7 +87,9 @@ export default function CheckoutPage() {
     if (paymentMethod === "cod") {
       await axiosInstance.post("/order/generate", payload);
       alert("order placed done");
+      navigate("/Product")
     }
+   
   };
 
   const handleSaveAddress = () => {

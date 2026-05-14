@@ -8,14 +8,15 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import { Link } from "react-router";
+import { Link, Navigate, useNavigate } from "react-router";
 import { logoutUserApi } from "../../service/apiCollections";
-import { Confirm } from "notiflix";
+import { Block, Confirm } from "notiflix";
 
 const NavBar = () => {
   const { isLoggedIn, userDetails } = useSelector(store => store.user);
   const user = userDetails;
-  const {totalItems} = useSelector((store)=>store.cart)
+  const { totalItems } = useSelector(store => store.cart);
+  const navigate = useNavigate();
 
   async function handleLogout() {
     // let ask = confirm("are you sure to logout?");
@@ -62,7 +63,19 @@ const NavBar = () => {
         </nav>
 
         <div className="flex items-center gap-4 text-lg">
-          <FaSearch className="cursor-pointer" />
+      
+
+          <FaSearch
+            onClick={() => {
+              navigate("/product",
+                    {
+                state: { focusSearch: true },
+                  
+                
+              });
+            }}
+            className="cursor-pointer"
+          />
           <FaHeart className="cursor-pointer" />
           <Link
             to={"/cart"}

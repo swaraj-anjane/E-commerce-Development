@@ -15,13 +15,12 @@ import Notiflix from "notiflix";
 import ProductPage from "./pages/ProductPage";
 import { getAllproductAsync } from "./redux/productSlice";
 import { getUserCartItemAsync } from "./redux/cartSlice";
-// import { fetchUserCartItemsAsync } from "./redux/CartSlice";
+import PaymentSuccess from "./pages/PaymentSuccess";
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(verifyUserLoginAsync());
-    // dispatch(fetchUserCartItemsAsync());
     dispatch(getAllproductAsync());
         dispatch(getUserCartItemAsync());
     
@@ -82,6 +81,8 @@ function App() {
           }
         />
         <Route path="/product/:id" element={<ProductDetailsPage />} />
+
+        
         <Route
           path="/checkout"
           element={
@@ -90,6 +91,7 @@ function App() {
             </Protected>
           }
         />
+        <Route path="/payment-success" element={<PaymentSuccess />} />
       </Routes>
     </>
   );

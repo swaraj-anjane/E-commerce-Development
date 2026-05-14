@@ -12,132 +12,72 @@ import { getAllproductApi } from "../service/apiCollections";
 import { toast } from "react-hot-toast";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllproductAsync } from "../redux/productSlice";
-import { useSearchParams } from "react-router";
-
-// const products = [
-//   {
-//     id: 1,
-//     name: "premium sneakers for men",
-//     brand: "nike",
-//     category: "footwear",
-//     price: 2499,
-//     mrp: 4999,
-//     discount: 50,
-//     rating: 4.8,
-//     review: 1387,
-//     stock: 12,
-//     poster:
-//       "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop",
-//   },
-//   {
-//     id: 2,
-//     name: "smart watch series x",
-//     brand: "noise",
-//     category: "electronics",
-//     price: 3199,
-//     mrp: 5499,
-//     discount: 42,
-//     rating: 4.7,
-//     review: 1094,
-//     stock: 20,
-//     poster:
-//       "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop",
-//   },
-//   {
-//     id: 3,
-//     name: "luxury perfume",
-//     brand: "bella vita",
-//     category: "beauty",
-//     price: 1899,
-//     mrp: 3299,
-//     discount: 41,
-//     rating: 4.9,
-//     review: 782,
-//     stock: 8,
-//     poster:
-//       "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800&auto=format&fit=crop",
-//   },
-//   {
-//     id: 4,
-//     name: "minimal desk lamp",
-//     brand: "philips",
-//     category: "home decor",
-//     price: 1199,
-//     mrp: 2099,
-//     discount: 43,
-//     rating: 4.6,
-//     review: 566,
-//     stock: 15,
-//     poster:
-//       "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=800&auto=format&fit=crop",
-//   },
-//   {
-//     id: 5,
-//     name: "wireless headphones",
-//     brand: "boat",
-//     category: "electronics",
-//     price: 2299,
-//     mrp: 3999,
-//     discount: 42,
-//     rating: 4.5,
-//     review: 934,
-//     stock: 11,
-//     poster:
-//       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop",
-//   },
-//   {
-//     id: 6,
-//     name: "casual hoodie",
-//     brand: "zara",
-//     category: "fashion",
-//     price: 1499,
-//     mrp: 2799,
-//     discount: 46,
-//     rating: 4.4,
-//     review: 431,
-//     stock: 17,
-//     poster:
-//       "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800&auto=format&fit=crop",
-//   },
-// ];
+import { useLocation, useSearchParams } from "react-router";
 
 export default function ProductPage() {
   const dispatch = useDispatch();
+  const location = useLocation();
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const { isLoading, productList } = useSelector((store) => store.product);
+  const { isLoading, productList } = useSelector(store => store.product);
   const products = productList;
   const [searchParams, setSearchParams] = useSearchParams();
   const [pages, setPages] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [search, setSearch] = useState("");
+  
 
   console.log(searchParams.toString());
 
-  const handleSearchPrams = (name, value) => {
-    if (value.toLowerCase() === "all") {
-      setSearchParams((prev) => {
-        let params = new URLSearchParams(prev);
-        params.delete(name);
-        return params;
-      });
-      return;
-    }
-    setSearchParams((prev) => {
-      let params = new URLSearchParams(prev);
-      params.set(name, value);
-      return params;
-    });
-  };
+ const handleSearchPrams = (name, value) => {
+   if (!value || value.toLowerCase() === "all") {
+     setSearchParams(prev => {
+       let params = new URLSearchParams(prev);
+
+       params.delete(name);
+
+       return params;
+     });
+
+     return;
+   }
+
+   setSearchParams(prev => {
+     let params = new URLSearchParams(prev);
+
+     params.set(name, value);
+
+     return params;
+   });
+ };
 
   async function loadProduct() {
     try {
       let response = await dispatch(
         getAllproductAsync(searchParams.toString()),
       ).unwrap();
-      setPages(Math.floor(response.total / response.limit));
+      setPages(Math.ceil(response.total / response.limit)); //update
       toast.success(response.message);
     } catch (error) {
       toast.error(error?.message || "falid to load products");
     }
   }
+
+  useEffect(() => {
+    if (location.state?.focusSearch) {
+      setTimeout(() => {
+        const searchInput = document.getElementById("product-search");
+
+        if (searchInput) {
+          searchInput.focus();
+
+          searchInput.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        }
+      }, 200);
+    }
+  }, [location]);
 
   useEffect(() => {
     loadProduct();
@@ -151,6 +91,10 @@ export default function ProductPage() {
     );
   }
 
+  // useEffect(() => {
+  //   dispatch(getAllproductAsync(currentPage));
+  // }, [dispatch, currentPage]);
+
   return (
     <div className="min-h-screen bg-[#f6f6f6] px-4 sm:px-6 py-8 text-gray-900">
       <div className="max-w-7xl mx-auto space-y-6">
@@ -163,14 +107,27 @@ export default function ProductPage() {
               Shop Collection
             </h1>
           </div>
-          <div className="flex flex-wrap gap-3">
-            <div className="bg-white border rounded-full px-4 py-3 text-sm flex items-center gap-3 min-w-[240px]">
-              <FaSearch />
-              <input
-                placeholder="Search products..."
-                className="outline-none bg-transparent w-full"
-              />
-            </div>
+          <div
+            className="
+    flex items-center gap-2 border rounded-full px-4 py-3
+    transition-all duration-300
+    focus-within:border-violet-600
+    focus-within:shadow-lg
+    focus-within:shadow-violet-200
+  ">
+          <FaSearch
+  className="cursor-pointer"
+/>
+            <input
+              id="product-search"
+              type="text"
+              placeholder="Search products..."
+              value={search}
+              onChange={e => {
+                setSearch(e.target.value);
+              }}
+              className="outline-none bg-transparent w-full"
+            />
           </div>
         </div>
 
@@ -187,10 +144,18 @@ export default function ProductPage() {
             <button
               key={index}
               onClick={() => {
-                (setSelectedCategory(cat), handleSearchPrams("category", cat));
+                setSelectedCategory(cat);
+                handleSearchPrams("category", cat);
               }}
-              className={`px-5 py-2.5 rounded-full text-sm whitespace-nowrap ${selectedCategory === cat ? "bg-black text-white" : "bg-white border"}`}
-            >
+              className={`px-5 py-2.5 rounded-full text-sm whitespace-nowrap cursor-pointer font-medium transition-all duration-300 border
+
+      ${
+        selectedCategory === cat ?
+          "bg-black text-white border-black shadow-lg scale-105"
+        : "bg-white text-gray-700 border-gray-200 hover:bg-gradient-to-r hover:from-violet-600 hover:to-indigo-600 hover:text-white hover:border-transparent hover:shadow-xl "
+      }
+
+      `}>
               {cat}
             </button>
           ))}
@@ -219,20 +184,43 @@ export default function ProductPage() {
             </div>
           </div>
           <div>
-            {products?.length > 0 ? (
+            {products?.length > 0 ?
               <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
                 {products.map((product, index) => (
                   <ProductCard key={index} product={product} />
                 ))}
               </div>
-            ) : (
-              <div className="h-[60dvh] w-full flex items-center justify-center ">
+            : <div className="h-[60dvh] w-full flex items-center justify-center ">
                 No product found !!
-          </div>
-            )}
-            <div className="mt-6 flex items-center gap-x-3">
+              </div>
+            }
+            <div className="mt-6 flex items-center gap-x-3 cursor-pointer">
               {Array.from({ length: pages }, (item, idx) => (
-                <div className="bg-black size-10 flex items-center justify-center rounded-md text-white">{idx + 1}</div>
+                <button
+                  key={idx}
+                  onClick={() => {
+                    setCurrentPage(idx + 1);
+
+                    setSearchParams(prev => {
+                      let params = new URLSearchParams(prev);
+
+                      params.set("page", idx + 1);
+
+                      return params;
+                    });
+                  }}
+                  className={`size-10 flex items-center justify-center rounded-md font-medium transition cursor-pointer 
+      
+
+        ${
+          currentPage === idx + 1 ?
+            "bg-black text-white"
+          : "bg-gray-200 text-black hover:shadow-xl hover:bg-gradient-to-r hover:from-violet-600 hover:to-indigo-600 hover:text-white hover:border-transparent"
+        }
+
+      `}>
+                  {idx + 1}
+                </button>
               ))}
             </div>
           </div>
