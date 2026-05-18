@@ -3983,3 +3983,107 @@
  Thu May 14 2026 14:20:12 GMT+0530 (India Standard Time) GET /user/verify-login 200
  Thu May 14 2026 14:20:12 GMT+0530 (India Standard Time) GET /product 200
  Thu May 14 2026 14:20:12 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Thu May 14 2026 18:42:28 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Thu May 14 2026 18:42:28 GMT+0530 (India Standard Time) GET /product 200
+ Thu May 14 2026 18:42:28 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Thu May 14 2026 18:42:58 GMT+0530 (India Standard Time) POST /user/login 200 
+ {"email":"swarajanjane968515@gmail.com","password":"s123123"}
+ Thu May 14 2026 18:43:18 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Thu May 14 2026 18:43:18 GMT+0530 (India Standard Time) GET /product 200
+ Thu May 14 2026 18:43:18 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Thu May 14 2026 18:43:35 GMT+0530 (India Standard Time) POST /user/login 200 
+ {"email":"swarajanjane968515@gmail.com","password":"s123456"}
+ Thu May 14 2026 18:43:35 GMT+0530 (India Standard Time) GET /upload/user/1778687413559-sung-jinwoo-dark-3840x2160-25924.jpg 200
+ Thu May 14 2026 18:49:17 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Thu May 14 2026 18:49:18 GMT+0530 (India Standard Time) GET /product 200
+ Thu May 14 2026 18:49:18 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Thu May 14 2026 18:49:18 GMT+0530 (India Standard Time) GET /upload/user/1778687413559-sung-jinwoo-dark-3840x2160-25924.jpg 200
+ Thu May 14 2026 18:50:08 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Thu May 14 2026 18:50:12 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Thu May 14 2026 18:50:12 GMT+0530 (India Standard Time) GET /product 200
+ Thu May 14 2026 18:50:12 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Thu May 14 2026 18:50:29 GMT+0530 (India Standard Time) POST /user/login 200 
+ {"email":"swarajanjane968515@gmail.com","password":"s123456"}
+ Thu May 14 2026 18:50:29 GMT+0530 (India Standard Time) GET /upload/user/1778687413559-sung-jinwoo-dark-3840x2160-25924.jpg 200
+ Thu May 14 2026 18:50:34 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Thu May 14 2026 18:50:34 GMT+0530 (India Standard Time) GET /product 200
+ Thu May 14 2026 18:50:34 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Thu May 14 2026 18:50:34 GMT+0530 (India Standard Time) GET /upload/user/1778687413559-sung-jinwoo-dark-3840x2160-25924.jpg 200
+ Thu May 14 2026 18:50:36 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Thu May 14 2026 18:50:36 GMT+0530 (India Standard Time) GET /product 200
+ Thu May 14 2026 18:50:36 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Thu May 14 2026 18:50:36 GMT+0530 (India Standard Time) GET /upload/user/1778687413559-sung-jinwoo-dark-3840x2160-25924.jpg 200
+ Sun May 17 2026 11:35:15 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Sun May 17 2026 11:35:15 GMT+0530 (India Standard Time) GET /product 200
+ Sun May 17 2026 11:35:15 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Sun May 17 2026 11:35:52 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Sun May 17 2026 11:35:52 GMT+0530 (India Standard Time) GET /product 200
+ Sun May 17 2026 11:35:52 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Mon May 18 2026 12:20:09 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Mon May 18 2026 12:20:09 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:20:09 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Mon May 18 2026 12:20:17 GMT+0530 (India Standard Time) POST /user/login 200 
+ {"email":"swarajanjane968515@gmail.com","password":"123456"}
+ Mon May 18 2026 12:20:24 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Mon May 18 2026 12:20:25 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:20:25 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Mon May 18 2026 12:20:44 GMT+0530 (India Standard Time) POST /user/login 200 
+ {"email":"swarajanjaane0@gmail.com","password":"s123456"}
+ Mon May 18 2026 12:20:52 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Mon May 18 2026 12:20:53 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:20:53 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Mon May 18 2026 12:21:14 GMT+0530 (India Standard Time) POST /user/login 200 
+ {"email":"swarajanjane0@gmail.com","password":"123456"}
+ Mon May 18 2026 12:21:21 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Mon May 18 2026 12:21:21 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:21:21 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Mon May 18 2026 12:21:58 GMT+0530 (India Standard Time) POST /user/register 200 
+ undefined
+ Mon May 18 2026 12:22:27 GMT+0530 (India Standard Time) POST /user/login 200 
+ {"email":"swaraj@gmail.com","password":"123456"}
+ Mon May 18 2026 12:22:28 GMT+0530 (India Standard Time) GET /upload/user/1779087118369-sung-jinwoo-dark-3840x2160-25924.jpg 200
+ Mon May 18 2026 12:22:37 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:22:48 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:22:54 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Mon May 18 2026 12:22:54 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:22:54 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Mon May 18 2026 12:22:54 GMT+0530 (India Standard Time) GET /upload/user/1779087118369-sung-jinwoo-dark-3840x2160-25924.jpg 200
+ Mon May 18 2026 12:22:54 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Mon May 18 2026 12:23:00 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:23:03 GMT+0530 (India Standard Time) POST /cart/add 200 
+ {"product":"6a045789aa59c49465d53b8c"}
+ Mon May 18 2026 12:23:04 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Mon May 18 2026 12:23:06 GMT+0530 (India Standard Time) DELETE /cart/6a0ab74f5caba8e6de32d32b 200
+ Mon May 18 2026 12:23:13 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:23:26 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:23:32 GMT+0530 (India Standard Time) GET /order/myorders 200
+ Mon May 18 2026 12:23:40 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Mon May 18 2026 12:23:40 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:23:40 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Mon May 18 2026 12:23:40 GMT+0530 (India Standard Time) GET /order/myorders 200
+ Mon May 18 2026 12:23:40 GMT+0530 (India Standard Time) GET /upload/user/1779087118369-sung-jinwoo-dark-3840x2160-25924.jpg 200
+ Mon May 18 2026 12:24:19 GMT+0530 (India Standard Time) GET /order/myorders 200
+ Mon May 18 2026 12:24:19 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Mon May 18 2026 12:24:19 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:24:19 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Mon May 18 2026 12:24:19 GMT+0530 (India Standard Time) GET /upload/user/1779087118369-sung-jinwoo-dark-3840x2160-25924.jpg 200
+ Mon May 18 2026 12:24:19 GMT+0530 (India Standard Time) GET /order/myorders 200
+ Mon May 18 2026 12:25:51 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:25:51 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Mon May 18 2026 12:25:51 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Mon May 18 2026 12:25:52 GMT+0530 (India Standard Time) GET /upload/user/1779087118369-sung-jinwoo-dark-3840x2160-25924.jpg 200
+ Mon May 18 2026 12:25:52 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:25:54 GMT+0530 (India Standard Time) POST /cart/add 200 
+ {"product":"6a045789aa59c49465d53b8c"}
+ Mon May 18 2026 12:25:56 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Mon May 18 2026 12:25:59 GMT+0530 (India Standard Time) POST /order/generate 200 
+ {"items":[{"productDetails":"6a045789aa59c49465d53b8c","quantity":1,"price":1999}],"address":{"fullName":"swaraj anjane","contact":"6263296465","pincode":"453112","city":"indore","state":"mp","addressLine":"52, indore","landmark":"mandir","house":"52"},"totalAmount":1999,"paymentMethod":"cod"}
+ Mon May 18 2026 12:26:01 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:26:06 GMT+0530 (India Standard Time) GET /order/myorders 200
+ Mon May 18 2026 12:26:18 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:26:20 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:26:26 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:26:30 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:26:35 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:27:14 GMT+0530 (India Standard Time) GET /product 200
+ Mon May 18 2026 12:27:22 GMT+0530 (India Standard Time) GET /product 200

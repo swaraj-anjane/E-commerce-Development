@@ -12,75 +12,7 @@ import {
 } from "react-icons/fa";
 import { getMyOrderApi } from "../service/apiCollections";
 
-// const orders = [
-//   {
-//     orderId: "ORD-90342X",
-//     orderStatus: "shipped",
-//     expectedDelivery: "15 April 2026",
-//     discount: 300,
-//     totalAmount: 5698,
-//     createdAt: "12 April 2026",
-//     address: {
-//       house: "221B Premium Residency, Sector 4",
-//       city: "Bhopal",
-//       pincode: "462001",
-//       state: "Madhya Pradesh",
-//       contact: "+91 9876543210",
-//     },
-//     items: [
-//       {
-//         quantity: 1,
-//         price: 2499,
-//         productDetails: {
-//           name: "premium sneakers for men",
-//           poster:
-//             "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=500&auto=format&fit=crop",
-//           brand: "nike",
-//           category: "footwear",
-//         },
-//       },
-//       {
-//         quantity: 1,
-//         price: 3499,
-//         productDetails: {
-//           name: "smart watch series x",
-//           poster:
-//             "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=500&auto=format&fit=crop",
-//           brand: "noise",
-//           category: "electronics",
-//         },
-//       },
-//     ],
-//   },
-//   {
-//     orderId: "ORD-88112A",
-//     orderStatus: "delivered",
-//     expectedDelivery: "Delivered on 05 April 2026",
-//     discount: 150,
-//     totalAmount: 1899,
-//     createdAt: "03 April 2026",
-//     address: {
-//       house: "14 Lake View Apartment",
-//       city: "Indore",
-//       pincode: "452001",
-//       state: "Madhya Pradesh",
-//       contact: "+91 9123456780",
-//     },
-//     items: [
-//       {
-//         quantity: 1,
-//         price: 1899,
-//         productDetails: {
-//           name: "luxury perfume",
-//           poster:
-//             "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=500&auto=format&fit=crop",
-//           brand: "bella vita",
-//           category: "beauty",
-//         },
-//       },
-//     ],
-//   },
-// ];
+
 
 const statusIcon = {
   pending: <FaBoxOpen />,

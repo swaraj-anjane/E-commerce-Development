@@ -87,7 +87,7 @@ export default function HomePage() {
       <section id="categories" className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-3xl font-bold">Shop by Category</h2>
-          <button className="text-sm font-medium flex items-center gap-2">
+          <button onClick={()=>navigate("/product")} className="text-sm font-medium flex items-center gap-2">
             View More <FaArrowRight />
           </button>
         </div>

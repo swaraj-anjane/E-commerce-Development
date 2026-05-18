@@ -2,6 +2,8 @@ const jwt = require("jsonwebtoken")
 const isLoggedIn = async (req, res, next) => {
   try {
     const token = req.cookies.secureToken; //ask user token 
+    
+    
     if (!token) {
       return res.status(401).json({
         message: "unauthorized",
