@@ -27,11 +27,16 @@ export default function MyOrdersPage() {
   const [openIndex, setOpenIndex] = useState(0);
   const [orders, setOrders] = useState([]);
 
+  
+
   useEffect(() => {
-    getMyOrderApi()
-      .then(response => setOrders(response.data))
-      .catch(error => alert(error.message));
+    getMyOrderApi().then(response =>
+      setOrders(Array.isArray(response.data) ? response.data : []),
+    );
   }, []);
+
+
+
 
   return (
     <div className="min-h-screen bg-[#f6f6f6] px-4 sm:px-6 py-8 text-gray-900">
