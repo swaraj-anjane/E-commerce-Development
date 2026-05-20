@@ -16,6 +16,8 @@ export default function HomePage() {
 
   const navigate = useNavigate();
 
+  
+
   const featuredProducts  = useSelector((store)=>store.product.productList)
 
   return (
@@ -87,7 +89,9 @@ export default function HomePage() {
       <section id="categories" className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-3xl font-bold">Shop by Category</h2>
-          <button onClick={()=>navigate("/product")} className="text-sm font-medium flex items-center gap-2">
+          <button
+            onClick={() => navigate("/product")}
+            className="text-sm font-medium flex items-center gap-2">
             View More <FaArrowRight />
           </button>
         </div>
@@ -97,6 +101,10 @@ export default function HomePage() {
               key={index}
               className="rounded-3xl overflow-hidden shadow-xl group cursor-pointer relative">
               <img
+                onClick={() => {
+                  setSelectedCategory(cat);
+                  handleSearchPrams("category", cat);
+                }}
                 src={cat.img}
                 alt={cat.name}
                 className="w-full h-72 object-cover group-hover:scale-105 transition duration-300"
@@ -139,7 +147,9 @@ export default function HomePage() {
               Join thousands of happy customers shopping smarter every day.
             </p>
           </div>
-          <button onClick={()=>navigate("/product")} className="px-8 py-3 bg-white text-black rounded-full font-semibold cursor-pointer">
+          <button
+            onClick={() => navigate("/product")}
+            className="px-8 py-3 bg-white text-black rounded-full font-semibold cursor-pointer">
             Claim Offer
           </button>
         </div>
