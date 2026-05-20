@@ -9,7 +9,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage";
 import MyOrdersPage from "./pages/OrderPage";
 import NavBar from "./components/cards/NavBar";
 import { verifyUserLoginAsync } from "./redux/userSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Notiflix from "notiflix";
 import ProductPage from "./pages/ProductPage";
@@ -22,9 +22,17 @@ function App() {
   useEffect(() => {
     dispatch(verifyUserLoginAsync());
     dispatch(getAllproductAsync());
-        dispatch(getUserCartItemAsync());
+        // dispatch(getUserCartItemAsync());
     
   }, []);
+
+  const { isLoggedIn } = useSelector(store => store.user);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      dispatch(getUserCartItemAsync());
+    }
+  }, [isLoggedIn]);
 
   Notiflix.Confirm.init({
     className: "notiflix-confirm",
