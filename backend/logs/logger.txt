@@ -4087,3 +4087,62 @@
  Mon May 18 2026 12:26:35 GMT+0530 (India Standard Time) GET /product 200
  Mon May 18 2026 12:27:14 GMT+0530 (India Standard Time) GET /product 200
  Mon May 18 2026 12:27:22 GMT+0530 (India Standard Time) GET /product 200
+ Sun May 24 2026 14:45:27 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Sun May 24 2026 14:45:27 GMT+0530 (India Standard Time) GET /product 200
+ Sun May 24 2026 14:45:51 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Sun May 24 2026 14:45:51 GMT+0530 (India Standard Time) GET /product 200
+ Sun May 24 2026 14:45:55 GMT+0530 (India Standard Time) POST /user/login 200 
+ {"email":"swarajanjane8515@gmail.com","password":"s123456"}
+ Sun May 24 2026 14:45:56 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Sun May 24 2026 14:45:57 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Sun May 24 2026 14:46:09 GMT+0530 (India Standard Time) POST /cart/add 200 
+ {"product":"6a045789aa59c49465d53b8c"}
+ Sun May 24 2026 14:46:11 GMT+0530 (India Standard Time) POST /cart/add 200 
+ {"product":"6a045789aa59c49465d53b8e"}
+ Sun May 24 2026 14:46:12 GMT+0530 (India Standard Time) POST /cart/add 200 
+ {"product":"6a045789aa59c49465d53b8d"}
+ Sun May 24 2026 14:46:13 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Sun May 24 2026 14:46:15 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1d9b99cb1978fa4c948 200
+ Sun May 24 2026 14:46:19 GMT+0530 (India Standard Time) POST /cart/add 200 
+ {"product":"6a045789aa59c49465d53b8c"}
+ Sun May 24 2026 14:46:21 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Sun May 24 2026 14:46:26 GMT+0530 (India Standard Time) POST /cart/add 200 
+ {"product":"6a045789aa59c49465d53b8c"}
+ Sun May 24 2026 14:46:28 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Sun May 24 2026 14:46:30 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dbb99cb1978fa4c949 200
+ Sun May 24 2026 14:46:30 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dbb99cb1978fa4c949 200
+ Sun May 24 2026 14:46:30 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dbb99cb1978fa4c949 200
+ Sun May 24 2026 14:46:31 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dbb99cb1978fa4c949 200
+ Sun May 24 2026 14:46:31 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dbb99cb1978fa4c949 200
+ Sun May 24 2026 14:46:31 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dbb99cb1978fa4c949 200
+ Sun May 24 2026 14:46:31 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dbb99cb1978fa4c949 200
+ Sun May 24 2026 14:46:31 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dbb99cb1978fa4c949 200
+ Sun May 24 2026 14:46:32 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dbb99cb1978fa4c949 200
+ Sun May 24 2026 14:46:33 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dbb99cb1978fa4c949 200
+ Sun May 24 2026 14:46:33 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dbb99cb1978fa4c949 200
+ Sun May 24 2026 14:46:33 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dbb99cb1978fa4c949 200
+ Sun May 24 2026 14:46:33 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dbb99cb1978fa4c949 200
+ Sun May 24 2026 14:46:33 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dbb99cb1978fa4c949 200
+ Sun May 24 2026 14:46:34 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dbb99cb1978fa4c949 200
+ Sun May 24 2026 14:46:34 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dbb99cb1978fa4c949 200
+ Sun May 24 2026 14:46:34 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dbb99cb1978fa4c949 200
+ Sun May 24 2026 14:46:35 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dcb99cb1978fa4c94a 200
+ Sun May 24 2026 14:46:36 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dcb99cb1978fa4c94a 200
+ Sun May 24 2026 14:46:36 GMT+0530 (India Standard Time) PATCH /cart/update-quantity/6a12c1dcb99cb1978fa4c94a 200
+ Sun May 24 2026 14:47:31 GMT+0530 (India Standard Time) GET /user/logout 200
+ Sun May 24 2026 14:47:31 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Sun May 24 2026 14:47:31 GMT+0530 (India Standard Time) GET /product 200
+ Sun May 24 2026 14:47:38 GMT+0530 (India Standard Time) POST /user/login 200 
+ {"email":"swarajanjane@gmail.com","password":"s123456"}
+ Sun May 24 2026 14:47:47 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Sun May 24 2026 14:47:47 GMT+0530 (India Standard Time) GET /product 200
+ Sun May 24 2026 14:47:53 GMT+0530 (India Standard Time) POST /user/login 200 
+ {"email":"swarajanja@gmail.com","password":"s123456"}
+ Sun May 24 2026 14:48:04 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Sun May 24 2026 14:48:04 GMT+0530 (India Standard Time) GET /product 200
+ Sun May 24 2026 14:48:39 GMT+0530 (India Standard Time) POST /user/register 200 
+ undefined
+ Sun May 24 2026 14:48:53 GMT+0530 (India Standard Time) POST /user/login 200 
+ {"email":"swarajanjane@gmail.com","password":"s123456"}
+ Sun May 24 2026 14:48:54 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Sun May 24 2026 14:48:54 GMT+0530 (India Standard Time) GET /upload/user/1779614319802-dark-moon-the-blood-3840x2160-25368.jpg 200

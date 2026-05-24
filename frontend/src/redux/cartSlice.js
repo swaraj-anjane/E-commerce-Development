@@ -123,11 +123,13 @@ const CartSlice = createSlice({
             item => item._id === action.payload._id,
           );
 
-          if (idx < 0) {
+          if (idx >= 0) {
+            state.cartItems[idx].quantity += 1;
+          } else {
             state.cartItems.push(action.payload);
           }
 
-          state.totalItems += 1;
+          state.totalItems = state.cartItems.length;
         },
       )
 

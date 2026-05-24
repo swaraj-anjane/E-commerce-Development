@@ -106,7 +106,13 @@ export default function MyOrdersPage() {
                     </div>
                   </div>
 
-                  {order.items.map((item, i) => (
+                  {orders.length < 1 && (
+                    <div className="h-[60vh] flex items-center justify-center text-2xl font-semibold text-gray-500">
+                      No Orders Found
+                    </div>
+                  )}
+
+                  {order?.items?.map((item, i) => (
                     <div
                       key={i}
                       className="flex gap-4 items-center border border-gray-100 rounded-3xl p-4 hover:shadow-sm transition">
