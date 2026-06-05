@@ -94,7 +94,7 @@ const ProductSchema = new Schema(
 
     productCode: {
       type: String,
-      required: true,
+      // required: true,
       unique: true,
       trim: true,
       uppercase: true,

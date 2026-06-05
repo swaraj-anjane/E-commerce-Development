@@ -11,6 +11,7 @@ const OrderRouter = require("./routes/order.routes");
 const mylogger = require("./utils/loggerHelperFunction");
 const cookieParser = require("cookie-parser");
 const paymentrouter = require("./routes/payment.routes");
+const DashboardRouter = require("./routes/dashboard.routes");
 
 //middleware
 server.use(express.json());
@@ -20,7 +21,7 @@ server.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://e-commerce-development.vercel.app",
+      // "https://e-commerce-development.vercel.app",
     ],
     credentials: true,
   }),
@@ -48,6 +49,7 @@ server.use("/cart", CartRouter);
 //order router
 server.use("/order", OrderRouter);
 server.use("/payment", paymentrouter);
+server.use("/dashboard", DashboardRouter);
 
 server.listen(process.env.PORT, async () => {
   try {

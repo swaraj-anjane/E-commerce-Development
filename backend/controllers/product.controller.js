@@ -4,9 +4,11 @@ async function createProduct(req, res) {
   console.log("controller started createProduct");
   console.log(req.body);
   const payload = req.body;
+  payload.productCode = `PRD-${Date.now()}`;
   if (req.file) {
-    let posterurl = `${process.env.PROTOCOL}://${req.file.destination}/${req.file.filename}`;
-    payload.poster = posterurl;
+let posterurl = `${req.protocol}://${req.get("host")}/${req.file.destination}/${req.file.filename}`;    payload.poster = posterurl;
+  console.log("HOST =", req.get("host"));
+  console.log("POSTER URL =", posterurl);
   } else {
     payload.poster = `http://jkhkjhkjh.com/img.png`;
   }
@@ -74,4 +76,57 @@ async function fetchProductById(req, res) {
   }
 }
 
-module.exports = { createProduct, fetchProducts, fetchProductById };
+async function deleteProduct(req, res) {
+  const { id } = req.params;
+
+  try {
+    const product = await ProductModel.findByIdAndDelete(id);
+console.log("Deleted Product:", product);
+    if (!product) {
+      return res.status(404).json({
+        message: "product not found",
+      });
+    }
+
+    res.status(200).json({
+      message: "product deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+}
+
+async function updateProduct(req, res) {
+  const { id } = req.params;
+
+  try {
+    const payload = { ...req.body };
+
+   if (req.file) {
+     payload.poster = `${req.protocol}://${req.get("host")}/${req.file.destination}/${req.file.filename}`;
+   }
+
+    const product = await ProductModel.findByIdAndUpdate(id, payload, {
+      new: true,
+    });
+
+    if (!product) {
+      return res.status(404).json({
+        message: "product not found",
+      });
+    }
+
+    res.status(200).json({
+      message: "product updated successfully",
+      data: product,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+}
+
+module.exports = { createProduct, fetchProducts, fetchProductById, deleteProduct, updateProduct};

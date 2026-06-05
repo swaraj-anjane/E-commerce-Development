@@ -5,8 +5,8 @@ const jwt = require("jsonwebtoken");
 const cookieOptions = {
   httpOnly: true,
   secure: process.env.NODE_ENV === "production",
-  // sameSite:"Lax",
-  sameSite: "None",
+  sameSite:"Lax",
+  // sameSite: "None",
   maxAge: 23 * 60 * 60 * 1000,
 };
 
@@ -57,6 +57,7 @@ async function LoginUser(req, res) {
         name: user.name,
         email: user.email,
         profilePic: user.profilePic,
+        role: user.role,
       },
       process.env.JWT_SECRET_KEY,
       { expiresIn: "1d" },
@@ -71,6 +72,7 @@ async function LoginUser(req, res) {
         email: user.email,
         id: user._id,
         profilePic: user.profilePic,
+        role: user.role,
       },
     });
   } catch (error) {
@@ -122,4 +124,65 @@ async function verifyLogin(req, res) {
   }
 }
 
-module.exports = { registerUser, LoginUser, logoutUser, verifyLogin };
+
+async function getAllUsers(req, res) {
+  try {
+    const users = await UserModel.find({}, "-password");
+
+    res.status(200).json({
+      message: "users fetched successfully",
+      data: users,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+}
+
+async function getUserById(req, res) {
+  const { id } = req.params;
+
+  try {
+    const user = await UserModel.findById(id, "-password");
+
+    if (!user) {
+      return res.status(404).json({
+        message: "user not found",
+      });
+    }
+
+    res.status(200).json({
+      message: "user fetched successfully",
+      data: user,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+}
+
+async function deleteUser(req, res) {
+  const { id } = req.params;
+
+  try {
+    const user = await UserModel.findByIdAndDelete(id);
+
+    if (!user) {
+      return res.status(404).json({
+        message: "user not found",
+      });
+    }
+
+    res.status(200).json({
+      message: "user deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+}
+
+module.exports = { registerUser, LoginUser, logoutUser, verifyLogin, getAllUsers, getUserById, deleteUser };

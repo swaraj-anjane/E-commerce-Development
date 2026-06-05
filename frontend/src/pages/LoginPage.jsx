@@ -26,7 +26,14 @@ export default function LoginPage() {
       //   "userdetails",
       //   JSON.stringify(response?.data) || null,
       // );
-      navigate("/");
+      // console.log("LOGIN RESPONSE", res.data);
+if (response?.data?.role === "admin") {
+  navigate("/admin/dashboard");
+} else {
+  navigate("/");
+}
+
+
     } catch (error) {
       toast.error(error);
     }

@@ -16,8 +16,13 @@ import ProductPage from "./pages/ProductPage";
 import { getAllproductAsync } from "./redux/productSlice";
 import { getUserCartItemAsync } from "./redux/cartSlice";
 import PaymentSuccess from "./pages/PaymentSuccess";
+import { useLocation } from "react-router";
+import AdminRoutes from "./admin/routes/AdminRoutes";
 function App() {
   const dispatch = useDispatch();
+  const location = useLocation();
+
+  const isAdminRoute = location.pathname.startsWith("/admin");
 
   useEffect(() => {
     dispatch(verifyUserLoginAsync());
@@ -66,7 +71,8 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      {!isAdminRoute && <NavBar />}
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
@@ -90,7 +96,6 @@ function App() {
         />
         <Route path="/product/:id" element={<ProductDetailsPage />} />
 
-        
         <Route
           path="/checkout"
           element={
@@ -100,6 +105,8 @@ function App() {
           }
         />
         <Route path="/payment-success" element={<PaymentSuccess />} />
+
+        {AdminRoutes}
       </Routes>
     </>
   );

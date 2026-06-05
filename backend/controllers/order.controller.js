@@ -57,4 +57,49 @@ async function getOrdersByUserId(req, res) {
   }
 }
 
-module.exports = { generateOrder, getOrdersByUserId };
+async function getAllOrders(req, res) {
+  try {
+    const orders = await OrderModel.find()
+      .populate("user", "name email")
+      .populate("items.productDetails", "name");
+
+    res.status(200).json({
+      message: "orders fetched successfully",
+      data: orders,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+}
+
+async function updateOrderStatus(req, res) {
+  const { id } = req.params;
+  const { orderStatus } = req.body;
+
+  try {
+    const order = await OrderModel.findByIdAndUpdate(
+      id,
+      { orderStatus },
+      { new: true },
+    );
+
+    if (!order) {
+      return res.status(404).json({
+        message: "order not found",
+      });
+    }
+
+    res.status(200).json({
+      message: "order status updated successfully",
+      data: order,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+}
+
+module.exports = { generateOrder, getOrdersByUserId, getAllOrders,updateOrderStatus };
