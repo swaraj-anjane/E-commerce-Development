@@ -1,4 +1,4 @@
-import UserModal from "../Components/UserModal";
+import UserModal from "../../admin/components/UserModal";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Confirm } from "notiflix";
