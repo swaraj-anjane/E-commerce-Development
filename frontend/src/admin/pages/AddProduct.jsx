@@ -40,7 +40,7 @@ const AddProduct = () => {
       // );
 
       const res = await axios.post(
-        "https://e-commerce-development.onrender.com/order",
+        "https://e-commerce-development.onrender.com/product",
         productData,
       );
 
