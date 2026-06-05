@@ -7,8 +7,10 @@ const DataTable = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/order");
-
+        // const res = await axios.get("http://localhost:8080/order");
+        const res = await axios.get(
+          "https://e-commerce-development.onrender.com/order",
+        );
         setOrders(res.data.data.slice(0, 5));
       } catch (error) {
         console.log(error);

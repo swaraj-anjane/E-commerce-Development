@@ -39,8 +39,8 @@ const AddProduct = () => {
       //   productData,
       // );
 
-      await axios.post(
-        `${import.meta.env.VITE_PUBLIC_API_URL}/product`,
+      const res = await axios.post(
+        "https://e-commerce-development.onrender.com/order",
         productData,
       );
 
