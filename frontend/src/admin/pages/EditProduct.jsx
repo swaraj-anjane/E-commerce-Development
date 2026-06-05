@@ -41,7 +41,11 @@ const [image, setImage] = useState(null);
    }
 
    try {
-     await axios.put(`http://localhost:8080/product/${id}`, productData);
+    //  await axios.put(`http://localhost:8080/product/${id}`, productData);
+     await axios.put(
+       `https://e-commerce-development.onrender.com/product/${id}`,
+       productData,
+     );
 
 toast.success("Product Updated Successfully");
 navigate("/admin/products");   } catch (error) {
@@ -52,8 +56,10 @@ navigate("/admin/products");   } catch (error) {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:8080/product/${id}`);
-    console.log("POSTER URL:", res.data.data.poster);
+        // const res = await axios.get(`http://localhost:8080/product/${id}`);
+        const res = await axios.get(
+          `https://e-commerce-development.onrender.com/product/${id}`,
+        );
 
         setFormData({
           name: res.data.data.name || "",

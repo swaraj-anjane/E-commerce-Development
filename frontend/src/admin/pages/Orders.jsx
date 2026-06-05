@@ -43,9 +43,13 @@ const [selectedOrder, setSelectedOrder] = useState(null);
 
   const handleStatusChange = async (id, orderStatus) => {
     try {
-      await axios.put(`http://localhost:8080/order/${id}/status`, {
-        orderStatus,
-      });
+      // await axios.put(`http://localhost:8080/order/${id}/status`, {
+      //   orderStatus,
+      // });
+      await axios.put(
+        `https://e-commerce-development.onrender.com/order/${id}/status`,
+        { status },
+      );
 
       setOrders(prev =>
         prev.map(order =>
@@ -61,7 +65,10 @@ const [selectedOrder, setSelectedOrder] = useState(null);
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/order");
+        // const res = await axios.get("http://localhost:8080/order");
+        const res = await axios.get(
+          "https://e-commerce-development.onrender.com/order",
+        );
 
         setOrders(res.data.data);
       } catch (error) {

@@ -17,7 +17,11 @@ const Users = () => {
       "Cancel",
       async () => {
         try {
-          await axios.delete(`http://localhost:8080/user/${id}`);
+          // await axios.delete(`http://localhost:8080/user/${id}`);
+          await axios.delete(
+            `https://e-commerce-development.onrender.com/user/${id}`,
+          );
+          
 
           setUsers(prev => prev.filter(user => user._id !== id));
 
@@ -33,7 +37,11 @@ const Users = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/user");
+        // const res = await axios.get("http://localhost:8080/user");
+        const res = await axios.get(
+          "https://e-commerce-development.onrender.com/user",
+        );
+
 
         setUsers(res.data.data);
       } catch (error) {

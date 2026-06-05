@@ -34,8 +34,13 @@ const AddProduct = () => {
     productData.append("productImage", image);
 
     try {
-      const res = await axios.post(
-        "http://localhost:8080/product",
+      // const res = await axios.post(
+      //   "http://localhost:8080/product",
+      //   productData,
+      // );
+
+      await axios.post(
+        `${import.meta.env.VITE_PUBLIC_API_URL}/product`,
         productData,
       );
 

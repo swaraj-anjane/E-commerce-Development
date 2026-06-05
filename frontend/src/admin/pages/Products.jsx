@@ -11,8 +11,10 @@ const Products = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        // const res = await axios.get("http://localhost:8080/product");
-        const res = await axios.get("http://localhost:8080/product?limit=100");
+        // const res = await axios.get("http://localhost:8080/product?limit=100");
+        const res = await axios.get(
+          "https://e-commerce-development.onrender.com/product?limit=100",
+        );
 
         setProducts(res.data.data);
       } catch (error) {
@@ -31,7 +33,10 @@ const Products = () => {
      "Cancel",
      async () => {
        try {
-         await axios.delete(`http://localhost:8080/product/${id}`);
+        //  await axios.delete(`http://localhost:8080/product/${id}`);
+        await axios.delete(
+          `https://e-commerce-development.onrender.com/product/${id}`,
+        );
 
          setProducts(prev => prev.filter(product => product._id !== id));
 
