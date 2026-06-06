@@ -10,7 +10,8 @@ A full-stack E-commerce web application built using the MERN stack.
 * Order Management
 * Protected Routes
 * Payment Integration
-* Responsive UI
+* Responsive 
+* Admin panel
 
 ## 🛠 Tech Stack
 
