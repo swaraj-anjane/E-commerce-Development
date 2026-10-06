@@ -1,5 +1,9 @@
 A full-stack E-commerce web application built using the MERN stack.
 
+🚀 Live Demo
+
+https://e-commerce-development.vercel.app/
+
 ## 🚀 Features
 
 * User Authentication
